@@ -1,12 +1,17 @@
-﻿<div class="card">
+﻿@model List<WebApp_Tarde.Models.ClientesViewModel>
+
+<div class="card">
+
     <div class="card-header">
         <h2>Lista de Clientes</h2>
     </div>
     <div class="card-body">
+
         <div class="row">
             <div class="col-2">
-                <a href="/Clientes/Cadastro" class="btn btn-success">
-                    Novo Cliente
+                <a href="/Clientes/Cadastro"
+                   class="btn btn-success">
+                    Novo CLiente
                 </a>
             </div>
             <div class="col-3">
@@ -18,7 +23,7 @@
                 </select>
             </div>
             <div class="col-5">
-                <input type="text" name="Busca" class="form-control" />
+                <input type="text" name="busca" class="form-control" />
             </div>
             <div class="col-2">
                 <button class="btn btn-primary" type="submit">
@@ -26,7 +31,9 @@
                 </button>
             </div>
         </div>
+
         <table class="table table-striped">
+
             <thead>
                 <tr>
                     <th>Código</th>
@@ -36,46 +43,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Carolina</td>
-                    <td>16 99778587</td>
-                    <td>
-                        <a href="/Clientes/editar/1" class="btn btn-warning">Editar</a>
-                        <a href="/Clientes/excluir/1" class="btn btn-danger">Excluir</a>
-                        <a href="/Clientes/compras/1" class="btn btn-info">Lista de compras</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Matheus</td>
-                    <td>16 99778587</td>
-                    <td>
-                        <a href="/Clientes/editar/2" class="btn btn-warning">Editar</a>
-                        <a href="/Clientes/excluir/2" class="btn btn-danger">Excluir</a>
-                        <a href="/Clientes/compras/2" class="btn btn-info">Lista de compras</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Antonio</td>
-                    <td>16 997789987</td>
-                    <td>
-                        <a href="/Clientes/editar/3" class="btn btn-warning">Editar</a>
-                        <a href="/Clientes/excluir/3" class="btn btn-danger">Excluir</a>
-                        <a href="/Clientes/compras/3" class="btn btn-info">Lista de compras</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Vini</td>
-                    <td>16 99789987</td>
-                    <td>
-                        <a href="/Clientes/editar/4" class="btn btn-warning">Editar</a>
-                        <a href="/Clientes/excluir/4" class="btn btn-danger">Excluir</a>
-                        <a href="/Clientes/compras/4" class="btn btn-info">Lista de compras</a>
-                    </td>
-                </tr>
+                @foreach (var cliente in Model)
+                {
+                    <tr>
+                        <td>@cliente.Id</td>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.Telefone</td>
+                        <td>
+                            <a href="/clientes/editar/@cliente.Id" class="btn btn-warning">
+                                Editar
+                            </a>
+                            <a href="/clientes/excluir/@cliente.Id" class="btn btn-danger">
+                                Excluir
+                            </a>
+                            <a href="/clientes/compras/@cliente.Id" class="btn btn-info">
+                                Lista de compras
+                            </a>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

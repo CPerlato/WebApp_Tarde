@@ -11,7 +11,7 @@ namespace WebApp_Tarde
         {
           
         }
-        public DbSet<ProdutoEntidades> Produtos { get; set; }
+        public DbSet<ProdutoEntidade> Produtos { get; set; }
     
 
         

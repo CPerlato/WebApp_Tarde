@@ -1,6 +1,6 @@
 ﻿namespace WebApp_Tarde.Entidades
 {
-    public class ProdutoEntidades
+    public class ProdutoEntidade
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
