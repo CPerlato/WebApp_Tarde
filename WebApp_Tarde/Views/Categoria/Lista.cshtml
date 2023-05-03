@@ -1,17 +1,17 @@
-﻿@model List<WebApp_Tarde.Entidades.ProdutoEntidade>
+﻿@model List<WebApp_Tarde.Entidades.CategoriaEntidade>
 
 <div class="card">
 
     <div class="card-header">
-        <h2>Lista de produtos</h2>
+        <h2>Lista de Categoria</h2>
     </div>
     <div class="card-body">
 
         <div class="row">
             <div class="col-2">
-                <a href="/Clientes/Cadastro"
+                <a href="/Categoria/Cadastro"
                    class="btn btn-success">
-                    Novo Produto
+                    Nova categoria
                 </a>
             </div>
             <div class="col-3">
@@ -19,7 +19,6 @@
                     <option value="0">Todos os campos</option>
                     <option value="id">Por Id</option>
                     <option value="nome">Por Nome</option>
-                    <option value="telefone">Por Telefone</option>
                 </select>
             </div>
             <div class="col-5">
@@ -37,25 +36,24 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
+                    <th>Nome</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
 
 
-                @foreach (var produto in Model)
+                @foreach (var categoria in Model)
                 {
                     <tr>
-                        <td>@produto.Id</td>
-                        <td>@produto.Descricao</td>
-                        <td>@produto.Valor</td>
+                        <td>@categoria.Id</td>
+                        <td>@categoria.Nome</td>
+                        <td>@categoria.Ativo</td>
                         <td>
-                            <a href="/produtos/editar/@produto.Id" class="btn btn-warning">
+                            <a href="/categoria/editar/@categoria.Id" class="btn btn-warning">
                                 Editar
                             </a>
-                            <a href="/produtos/excluir/@produto.Id" class="btn btn-danger">
+                            <a href="/categoria/excluir/@categoria.Id" class="btn btn-danger">
                                 Excluir
                             </a>
 
