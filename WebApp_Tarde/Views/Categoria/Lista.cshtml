@@ -48,7 +48,16 @@
                     <tr>
                         <td>@categoria.Id</td>
                         <td>@categoria.Nome</td>
-                        <td>@categoria.Ativo</td>
+                        <td>
+                            @if (@categoria.Ativo)
+                            {
+                                <input type="checkbox" readonly checked />
+                            }
+                            else
+                            {
+                                <input type="checkbox" readonly />
+                            }
+                        </td>
                         <td>
                             <a href="/categoria/editar/@categoria.Id" class="btn btn-warning">
                                 Editar
