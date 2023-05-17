@@ -46,7 +46,7 @@
                 @foreach (var categoria in Model)
                 {
                     <tr>
-                        <td>@categoria.Id</td>
+                        <td>@categoria.ID</td>
                         <td>@categoria.Nome</td>
                         <td>
                             @if (@categoria.Ativo)
@@ -59,10 +59,10 @@
                             }
                         </td>
                         <td>
-                            <a href="/categoria/editar/@categoria.Id" class="btn btn-warning">
+                            <a href="/categoria/editar/@categoria.ID"class="btn btn-warning">
                                 Editar
                             </a>
-                            <a href="/categoria/excluir/@categoria.Id" class="btn btn-danger">
+                            <a href="/categoria/excluir/@categoria.ID"class="btn btn-danger">
                                 Excluir
                             </a>
 

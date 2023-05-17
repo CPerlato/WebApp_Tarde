@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System.Runtime.Intrinsics.Arm;
 using WebApp_Tarde.Entidades;
 
@@ -17,9 +18,8 @@ namespace WebApp_Tarde
 
         public DbSet<CategoriaEntidade> categoria { get; set; }
 
-
-
-
+        public DbSet<VendasEntidade>Vendas { get; set; }
+        public DbSet<ItensVendaEntidade>ItensVenda { get; set; }
     }
 }
 

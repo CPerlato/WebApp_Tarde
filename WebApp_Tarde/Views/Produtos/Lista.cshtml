@@ -39,6 +39,7 @@
                     <th>Código</th>
                     <th>Descrição</th>
                     <th>Valor</th>
+                    <th>Categoria</th>
                     <th></th>
                 </tr>
             </thead>
@@ -51,11 +52,12 @@
                         <td>@produto.Id</td>
                         <td>@produto.Descricao</td>
                         <td>@produto.Valor</td>
+                        <td>@produto.Categoria.Nome</td>
                         <td>
-                            <a href="/produtos/editar/@produto.Id" class="btn btn-warning">
+                            <a href="/produtos/editar/@produto.ID" class="btn btn-warning">
                                 Editar
                             </a>
-                            <a href="/produtos/excluir/@produto.Id" class="btn btn-danger">
+                            <a href="/produtos/excluir/@produto.ID" class="btn btn-danger">
                                 Excluir
                             </a>
 
